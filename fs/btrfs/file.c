@@ -3596,7 +3596,8 @@ static ssize_t btrfs_file_read_iter(struct kiocb *iocb, struct iov_iter *to)
 			return ret;
 	}
 
-	return generic_file_buffered_read(iocb, to, ret);
+//	return generic_file_buffered_read(iocb, to, ret);
+	return generic_file_read_iter(iocb, to);
 }
 
 const struct file_operations btrfs_file_operations = {
